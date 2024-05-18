@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pay_app/screens/DashBoard.dart';
+import 'package:pay_app/screens/ContactView.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -8,16 +9,20 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pay App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 147, 229, 250),
+          brightness: Brightness.dark,
+          surface: const Color.fromARGB(255, 42, 51, 59),
+        ),
         useMaterial3: true,
       ),
-      home: DashBoard(merchantName: "Rio"),
+      debugShowCheckedModeBanner: false,
+      home: const ContactView(contactName: "Thrivedhi", contactNum: "966613308"),
     );
   }
 }
